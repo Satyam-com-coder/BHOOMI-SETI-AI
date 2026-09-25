@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #eef1ee;
+    --surf: #ffffff;
+    --ink: #14231f;
+    --mute: #5d6b66;
+    --line: #d8dfda;
+    --deep: #12332f;
+    --acc: #1f6f5c;
+    --sun: #e0951f;
+    --ok: #1a7f4b;
+    --warn: #a96200;
+    --bad: #b3261e;
+    --info: #1e58c8;
+    --okbg: #e2f3e8;
+    --warnbg: #fdf0d5;
+    --badbg: #fbe3e0;
+    --infobg: #e3ecfc;
+    box-sizing: border-box;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0e1614;
+    --surf: #16211e;
+    --ink: #e6eeea;
+    --mute: #93a39c;
+    --line: #26342f;
+    --deep: #0a1210;
+    --acc: #4fc3a1;
+    --sun: #f0b34e;
+    --ok: #5fd08e;
+    --warn: #f0b34e;
+    --bad: #ff8a80;
+    --info: #8fb2ff;
+    --okbg: #153524;
+    --warnbg: #3a2b0d;
+    --badbg: #3d1a17;
+    --infobg: #172848;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Mukta', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+}
+
+/* Custom utility colors */
+.bg-deep { background-color: var(--deep); }
+.bg-surf { background-color: var(--surf); }
+.bg-canvas { background-color: var(--bg); }
+.bg-acc { background-color: var(--acc); }
+.bg-sun { background-color: var(--sun); }
+.text-ink { color: var(--ink); }
+.text-mute { color: var(--mute); }
+.text-acc { color: var(--acc); }
+.text-ok { color: var(--ok); }
+.text-warn { color: var(--warn); }
+.text-bad { color: var(--bad); }
+.border-line { border-color: var(--line); }
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge-ok {
+  background-color: var(--okbg);
+  color: var(--ok);
+}
+.badge-warn {
+  background-color: var(--warnbg);
+  color: var(--warn);
+}
+.badge-bad {
+  background-color: var(--badbg);
+  color: var(--bad);
+}
+.badge-info {
+  background-color: var(--infobg);
+  color: var(--info);
+}
+
+/* Map Polygons */
+.map-parcel {
+  cursor: pointer;
+  stroke-width: 2;
+  fill-opacity: 0.55;
+  transition: all 0.2s ease-in-out;
+}
+.map-parcel:hover {
+  fill-opacity: 0.85;
+}
+.map-parcel.selected {
+  stroke-width: 4;
+  fill-opacity: 0.9;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+.map-ok {
+  fill: var(--ok);
+  stroke: var(--ok);
+}
+.map-warn {
+  fill: var(--sun);
+  stroke: var(--warn);
+}
+.map-bad {
+  fill: var(--bad);
+  stroke: var(--bad);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mute);
+}

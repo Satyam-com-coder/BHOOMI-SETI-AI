@@ -1,0 +1,6 @@
+{
+  "name": "Bhoomi-Setu AI - Land Record Intelligence",
+  "description": "AI-powered land record digitization, multilingual OCR, cadastral GIS cross-validation, and cryptographic audit trail for revenue administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
